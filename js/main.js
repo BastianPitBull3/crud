@@ -41,4 +41,13 @@ const fetchAllUsers = async()=>{
 fetchAllUsers();
 
 //Show edit modal when an edit button is clicked
+const showEditModal = () => {
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('body').addEventListener('click', (e) => {
+            if(e.target.classList.contains('edit-user-btn')){
+                editUserModal.show();
+            }
+        });
+    });
+}
 showEditModal();
