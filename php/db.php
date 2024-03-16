@@ -23,5 +23,37 @@
             $result = $stmt->fetchAll();
             return $result;
         }
+
+        //Fetch single user from database
+        public function readOne($id){
+            $sql = "SELECT * FROM user WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(["id" => $id]);
+            $result = $stmt->fetch();
+            return $result;
+        }
+
+        //Update single user
+        public function update($id, $fName, $lName, $email, $phone){
+            $sql = "UPDATE user SET first_name = :firstName, last_name = :lastName, 
+                    email = :email, phone = :phone WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                "id" => $id,
+                "firstName" => $fName,
+                "lastName" => $lName,
+                "email" => $email,
+                "phone" => $phone
+            ]);
+            return true;
+        }
+
+        //Delete user from database
+        public function delete($id){
+            $sql = "DELETE FROM user WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(["id" => $id]);
+            return true;
+        }
     }
 ?>

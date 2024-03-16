@@ -31,11 +31,11 @@
                                 <td>'.$row["last_name"].'</td>
                                 <td>'.$row["email"].'</td>
                                 <td>'.$row["phone"].'</td>
-                                <td class=>
+                                <td>
                                     <button type="button" id="'.$row["id"].'" class="btn btn-success btn-sm 
-                                        edit-user-btn edit-link">Edit</button>
+                                        edit-user-btn">Edit</button>
                                     <button type="button" id="'.$row["id"].'" class="btn btn-danger btn-sm
-                                        delete-user-btn edit-link">Delete</button>
+                                        delete-user-btn">Delete</button>
                                 </td>
                             </tr>';
             }
@@ -44,6 +44,39 @@
             echo '<tr>
                     <td colspan="6">No Users Found In The Database!</td>        
                 </tr>';
+        }
+    }
+
+    //Handle edit user Ajax request
+    if(isset($_GET["edit"])){
+        $id = $_GET["id"];
+        $user = $db->readOne($id);
+        echo json_encode($user);
+    }
+
+    //Handle update user Ajax request
+    if(isset($_POST["update"])){
+        $id = $util->testInput($_POST["id"]);
+        $fName = $util->testInput($_POST["firstName"]);
+        $lName = $util->testInput($_POST["lastName"]);
+        $email = $util->testInput($_POST["email"]);
+        $phone = $util->testInput($_POST["phone"]);
+
+        if($db->update($id, $fName, $lName, $email, $phone)){
+            echo $util->showMessage("success", "User Updated Successfully!");
+        }else{
+            echo $util->showMessage("danger", "Something went wrong!");
+        }
+    }
+
+    //Handle delete user ajax request
+    if(isset($_GET["delete"])){
+        $id = $_GET["id"];
+
+        if($db->delete($id)){
+            echo $util->showMessage("info", "User deleted Successfully!");
+        }else{
+            echo $util->showMessage("danger", "Something went wrong!");
         }
     }
 ?>

@@ -23,27 +23,23 @@
                     <form class="p-2" id="addUserForm" novalidate>
                         <div class="row mb-3 gx-3">
                             <div class="col">
-                                <input type="text" name="firstName" class="form-control form-control-lg"
-                                placeholder="Enter first name" required>
+                                <input type="text" name="firstName" class="form-control form-control-lg" placeholder="Enter first name" required>
                                 <div class="invalid-feedback">First name is required!</div>
                             </div>
 
                             <div class="col">
-                                <input type="text" name="lastName" class="form-control form-control-lg"
-                                placeholder="Enter last name" required>
+                                <input type="text" name="lastName" class="form-control form-control-lg" placeholder="Enter last name" required>
                                 <div class="invalid-feedback">Last name is required!</div>
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <input type="email" name="email" class="form-control form-control-lg"
-                            placeholder="Enter E-Mail" required>
+                            <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter E-Mail" required>
                             <div class="invalid-feedback">E-Mail is required!</div>
                         </div>
 
                         <div class="mb-3">
-                            <input type="tel" name="phone" class="form-control form-control-lg"
-                            placeholder="Enter phone number" required>
+                            <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Enter phone number" required>
                             <div class="invalid-feedback">Phone number is required!</div>
                         </div>
 
@@ -62,35 +58,31 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add New User</h5>
+                    <h5 class="modal-title">Edit User</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="p-2" id="addUserForm" novalidate>
+                    <form class="p-2" id="editUserForm" novalidate>
                         <input type="hidden" name="id" id="id">
                         <div class="row mb-3 gx-3">
                             <div class="col">
-                                <input type="text" name="firstName" id="firstName" class="form-control form-control-lg"
-                                placeholder="Enter first name" required>
+                                <input type="text" name="firstName" id="firstName" class="form-control form-control-lg" placeholder="Enter first name" required>
                                 <div class="invalid-feedback">First name is required!</div>
                             </div>
 
                             <div class="col">
-                                <input type="text" name="lastName" id="lastName" class="form-control form-control-lg"
-                                placeholder="Enter last name" required>
+                                <input type="text" name="lastName" id="lastName" class="form-control form-control-lg" placeholder="Enter last name" required>
                                 <div class="invalid-feedback">Last name is required!</div>
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <input type="email" name="email" id="email" class="form-control form-control-lg"
-                            placeholder="Enter E-Mail" required>
+                            <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Enter E-Mail" required>
                             <div class="invalid-feedback">E-Mail is required!</div>
                         </div>
 
                         <div class="mb-3">
-                            <input type="tel" name="phone" id="phone" class="form-control form-control-lg"
-                            placeholder="Enter phone number" required>
+                            <input type="tel" name="phone" id="phone" class="form-control form-control-lg" placeholder="Enter phone number" required>
                             <div class="invalid-feedback">Phone number is required!</div>
                         </div>
 
@@ -98,6 +90,34 @@
                             <input type="submit" value="Update user" id="editUserBtn" class="btn btn-success w-100 btn-lg">
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit user modal END -->
+
+    <!-- Delete user modal START -->
+    <div class="modal fade" tabindex="-1" id="deleteUserModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3 text-center">
+                        <p>Are you sure you want to delete this user?</p>
+                    </div>
+                    <!-- <div class="row d-flex align-items-center justify-content-beetween">
+                        <button type="button" class="btn btn-danger btn-delete d-inline-block">Yes, delete</button>
+                        <button type="button" class="btn btn-secondary d-inline-block">No</button>
+                    </div> -->
+                    <div class="d-flex justify-content-between">
+                        <di></di>
+                        <button type="button" class="btn btn-success btn-delete">Yes, delete</button>
+                        <button type="button" class="btn btn-secondary btn-dont-delete">I am not sure</button>
+                        <di></di>
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,7 +135,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-4">
             <div class="col-lg-12">
                 <div id="showAlert"></div>
             </div>
@@ -136,7 +156,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+
                         </tbody>
                     </table>
                 </div>
