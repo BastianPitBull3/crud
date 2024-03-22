@@ -4,8 +4,9 @@
         private const USER = "root";
         private const PASSWORD = "";
         private const DATABASE = "crud";
+        private const CHARSET = "utf8";
 
-        private $dsn = "mysql:host=".self::SERVER.";dbname=".self::DATABASE;
+        private $dsn = "mysql:host=".self::SERVER.";dbname=".self::DATABASE.";charset=".self::CHARSET;
         protected $conn = null;
 
         //Method for connection to the database
