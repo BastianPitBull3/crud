@@ -9,10 +9,11 @@
     if(isset($_POST["add"])){
         $fName = $util->testInput($_POST["firstName"]);
         $lName = $util->testInput($_POST["lastName"]);
+        $pwd = $util->testInput($_POST["pwd"]);
         $email = $util->testInput($_POST["email"]);
         $phone = $util->testInput($_POST["phone"]);
 
-        if($db->insert($fName, $lName, $email, $phone)){
+        if($db->insert($fName, $lName, $pwd, $email, $phone)){
             echo $util->showMessage("success", "User inserted succesfully!");
         }else{
             echo $util->showMessage("danger", "Something went wrong!");

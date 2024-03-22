@@ -3,9 +3,9 @@
         private const SERVER = "localhost";
         private const USER = "root";
         private const PASSWORD = "";
-        private const DATABASE = "crudd";
+        private const DATABASE = "crud";
 
-        private $dsn = "mysql:host=".self::SERVER.";dbname=".self::DATABASE."";
+        private $dsn = "mysql:host=".self::SERVER.";dbname=".self::DATABASE;
         protected $conn = null;
 
         //Method for connection to the database

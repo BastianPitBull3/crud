@@ -3,13 +3,14 @@
 
     class Database extends Config{
         //Insert user into database
-        public function insert($fName, $lName, $email, $phone){
-            $sql = "INSERT INTO user(first_name, last_name, email, phone) 
-            VALUES(:firstName, :lastName, :email, :phone)";
+        public function insert($fName, $lName, $pwd, $email, $phone){
+            $sql = "INSERT INTO user(first_name, last_name, pwd, email, phone) 
+            VALUES(:firstName, :lastName, :pwd, :email, :phone)";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([
                 "firstName" => $fName,
                 "lastName" => $lName,
+                "pwd" => $pwd,
                 "email" => $email,
                 "phone" => $phone
             ]);
@@ -54,6 +55,21 @@
             $stmt = $this->conn->prepare($sql);
             $stmt->execute(["id" => $id]);
             return true;
+        }
+
+        public function login($email, $pwd){
+            $sql = "SELECT * FROM user WHERE email = :email AND pwd = :pwd";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute(["email" => $email,
+                            "pwd" => $pwd]);
+            $result = $stmt->fetch();
+            if($result !== null){
+                
+            }
+        }
+
+        public function getConn() {
+            return $this->conn;
         }
     }
 ?>
