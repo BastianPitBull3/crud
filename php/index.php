@@ -21,11 +21,11 @@
             <hr>
             <div class="mb-4">
                 <label for="loginEmail" style="font-size: large; font-family:Arial, Helvetica, sans-serif;">E-mail</label>
-                <input type="email" id="loginEmail" name="loginEmail" class="form-control form-control-lg" placeholder="Enter your E-mail" required>
+                <input type="email" id="loginEmail" name="loginEmail" value="juanbravo@gmail.com" class="form-control form-control-lg" placeholder="Enter your E-mail" required>
             </div>
             <div class="mb-4">
                 <label for="loginPassword" style="font-size: large; font-family:Arial, Helvetica, sans-serif;">Password</label>
-                <input type="password" id="loginPassword" name="loginPassword" class="form-control form-control-lg" placeholder="Enter your password" required>
+                <input type="password" id="loginPassword" name="loginPassword" value="juan1"class="form-control form-control-lg" placeholder="Enter your password" required>
             </div>
             <input class="btn btn-primary btn-lg w-100" type="submit" value="Go!" id="loginBtn" name="loginBtn">
         </form>
